@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+
+  height: 100px;
+  background-color: red;
+  margin: 0 auto 20px auto;
+  width: 800px;
+}
+
+
+
+
+.count{
+  width: 400px;
+  height: 200px;
+  background-color: red;
+  margin-left: 400px;
+  margin-top: 200px;
+}
+.btn1{
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  margin-right: 15px;
+}
+.btn2{
+  width: 90px;
+  height: 90px;
+}
+.num {
+
+  height: 60px;
+  width: 60px;
+  margin: 0 auto 20px auto;
+  font-size: 45px;
+}
+.error {
+  color: red;
+  height: 60px;
+  width: 60px;
+  margin: 0 auto 20px auto;
+  font-size: 45px;
+}
