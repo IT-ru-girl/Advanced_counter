@@ -8,10 +8,13 @@ import Count from './Components/Count';
 
 
 const App = () => {
-    const [num, setNum] = useState<number>(0)
+
+    const startValue =0
+    const maxValue =5
+    const [num, setNum] = useState<number>(startValue)
 
     const changeNum = () => {
-       setNum(num + 1)
+      num<maxValue && setNum(num + 1)
     }
 
     const resetNum = () => {
@@ -19,7 +22,7 @@ const App = () => {
     }
     return (
         <div className={s.app}>
-            <Count num={num} changeNum={changeNum} resetNum={resetNum}/>
+            <Count num={num} changeNum={changeNum} resetNum={resetNum} maxValue={maxValue}/>
         </div>
     );
 }

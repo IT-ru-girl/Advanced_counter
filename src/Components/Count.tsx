@@ -8,12 +8,13 @@ type CountPropsType ={
     changeNum: ()=> void
     resetNum: ()=> void
     num: number
+    maxValue: number
 }
 
 const Count = (props: CountPropsType) => {
     return (
         <div>
-            <div className={props.num === 5 ? s.error : s.num}>{props.num}</div>
+            <div className={props.num === props.maxValue ? s.error : s.num}>{props.num}</div>
             <Button name={'inc'} onClick={props.changeNum} />
             <Button name={'res'}  onClick={props.resetNum}/>
         </div>
