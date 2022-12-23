@@ -1,28 +1,30 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 
-  height: 100px;
-  background-color: red;
-  margin: 0 auto 20px auto;
-  width: 800px;
+  /*height: 100px;*/
+  /*background-color: red;*/
+  /*margin: 0 auto 20px auto;*/
+  /*width: 800px;*/
+  margin:  auto;
+  width: auto;
+  background-color: lightslategrey;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 
 
-.count{
-  width: 400px;
-  height: 200px;
-  background-color: red;
-  margin-left: 400px;
-  margin-top: 200px;
-}
-.btn1{
-  width: 90px;
-  height: 90px;
-  display: inline-block;
-  margin-right: 15px;
-}
+/*.count{*/
+/*  width: 400px;*/
+/*  height: 200px;*/
+/*  background-color: red;*/
+/*  margin-left: 400px;*/
+/*  margin-top: 200px;*/
+/*}*/
+
 .btn2{
   width: 90px;
   height: 90px;
@@ -40,4 +42,43 @@
   width: 60px;
   margin: 0 auto 20px auto;
   font-size: 45px;
+}
+
+.counter {
+  width: 300px;
+  height: 250px;
+  border: 1px solid lightskyblue;
+
+border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.counterDisplay {
+  padding: 10px;
+
+  /*border: 1px solid red;*/
+  text-align: center;
+  margin-top: 15px;
+}
+.buttonsBlock {
+  /*border: 1px solid yellow;*/
+  width: 50%;
+  border-radius: 30px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.errorInput{
+  border: 1px solid red;
+  background-color: red;
+}
+.input {
+  background-color: lightblue;
+}
+
+.errorValue {
+  color: red;
 }

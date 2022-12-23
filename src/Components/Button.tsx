@@ -4,6 +4,7 @@ import b from '../Button.module.css';
 type ButtonPropsType ={
     onClick: ()=> void
     name:string
+    disabled?: boolean
 }
 
 const Button = (props: ButtonPropsType) => {
@@ -12,7 +13,11 @@ const Button = (props: ButtonPropsType) => {
     }
     return (
         <div className={b.mainBtn}>
-            <button  className={b.btn1} onClick={onClickHandler}>{props.name}</button>
+            <button disabled={props.disabled && props.disabled}
+                    className={b.btn1}
+                    onClick={onClickHandler}>
+                {props.name}
+            </button>
         </div>
     );
 };
