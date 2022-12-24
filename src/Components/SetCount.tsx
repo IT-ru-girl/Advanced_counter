@@ -13,53 +13,69 @@ type SetCountType = {
     setNum: (inpMin: number) => void
     num: number
     startValue: number
+    error:string
+    setError: (error:string)=>void
 
 
 }
 const SetCount = (props: SetCountType) => {
-    const [min, setMin] = useState(props.inpMin)
-    const [max, setMax] = useState(props.inpMax)
+
+
+    useEffect(() => {
+        let valueAsString = localStorage.getItem('counterValueMin')
+        if (valueAsString) {
+            let getValueMin = JSON.parse(valueAsString)
+           props.setInpMin(+getValueMin)
+        }
+    }, [])
+
+    useEffect(() => {
+        let valueAsString = localStorage.getItem('counterValueMax')
+        if (valueAsString) {
+            let getValueMax = JSON.parse(valueAsString)
+           props.setInpMax(+getValueMax)
+        }
+
+    }, [])
+
     const onChangeMax = (event: ChangeEvent<HTMLInputElement>) => {
         const actualValueMax = +event.currentTarget.value
-        setMax(actualValueMax)
+       props.setInpMax(actualValueMax)
     }
 
     const onChangeMin = (event: ChangeEvent<HTMLInputElement>) => {
         const actualValue = +event.currentTarget.value
-        setMin(actualValue)
-        // props.setNum(props.inpMin < 0 || +props.inpMax < 0 ? 'Incorrect value!' : s.num)
+       props.setInpMin(actualValue)
+
+
     }
 
-    useEffect(()=>{
-        setMin(props.inpMin)
-        setMax(props.inpMax)
-    },[props.inpMax, props.inpMin])
 
     const onClickHandler = () => {
-        localStorage.setItem('counterValueMin', JSON.stringify(min))
-        localStorage.setItem('counterValueMax', JSON.stringify(max))
-        props.setInpMax(max)
-        props.setInpMin(min)
-        props.setNum(min)
-    }
-
-    const onFocusHandler = () => {
+        localStorage.setItem('counterValueMin', JSON.stringify(props.inpMin))
+        localStorage.setItem('counterValueMax', JSON.stringify(props.inpMax))
+        props.setInpMax(props.inpMax)
+        props.setInpMin(props.inpMin)
+        props.setNum(props.inpMin)
 
     }
-    const finalErrorInput = `${s.counterDisplay} ${props.inpMin <= 0 || props.inpMax === props.inpMin ? s.errorInput : s.input}`
-    const finalErrorInput2 = `${s.counterDisplay} ${props.inpMax <= 0 || props.inpMax === props.inpMin ? s.errorInput : s.input}`
+
+    const finalErrorInput = `${s.counterDisplay} ${props.inpMin <= 0 || props.inpMax === props.inpMin ||  props.inpMax < props.inpMin ? s.errorInput  : s.input}`
+    const finalErrorInput2 = `${s.counterDisplay} ${props.inpMax <= 0 || props.inpMax === props.inpMin  || props.inpMax < props.inpMin ? s.errorInput : s.input}`
 
     return (
         <div className={s.counter}>
             <span>{'min value:'}</span>
-            <input className={finalErrorInput} onFocus={onFocusHandler} value={min} onChange={onChangeMin}
+            <input className={finalErrorInput}   value={props.inpMin} onChange={onChangeMin}
                    type="number"/>
 
             <span>{'max value:'}</span>
-            <div>{props.inpMin}</div>
-            <input className={finalErrorInput2} value={max} onChange={onChangeMax} type="number"/>
+            <input className={finalErrorInput2} value={props.inpMax} onChange={onChangeMax} type="number"/>
+
             <div className={b.divButton}>
-                <Button disabled={max === min || min < 0 || max < 0} onClick={onClickHandler} name={'set'}/>
+                <Button
+                    disabled={props.inpMax === props.inpMin || props.inpMax < 0 || props.inpMin < 0 || props.inpMax < props.inpMin }
+                    onClick={onClickHandler} name={'set'}/>
             </div>
 
         </div>

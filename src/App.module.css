@@ -36,7 +36,7 @@
   margin: 0 auto 20px auto;
   font-size: 45px;
 }
-.error {
+.maxValue {
   color: red;
   height: 60px;
   width: 60px;
@@ -79,6 +79,14 @@ border-radius: 20px;
   background-color: lightblue;
 }
 
-.errorValue {
+.errorMessage {
   color: red;
+  font-size: 30px;
+  align-items: center;
 }
+.message {
+  color: black;
+  font-weight: bold;
+  font-size: 28px;
+}
+
