@@ -37,10 +37,10 @@ const Counter = (props: CounterPropsType) => {
             <div className={s.buttonsBlock}>
                 <Button name={'inc'}
                         onClick={props.changeNum}
-                        disabled={props.num === props.maxValue || props.num === props.inpMax || props.inpMax === props.inpMin || props.inpMin < 0 || props.inpMax < 0 || props.inpMax < props.inpMin}
+                        disabled={props.num === props.maxValue || props.num === props.inpMax || props.inpMax === props.inpMin || props.inpMin < 0 || props.inpMax < 0 || props.inpMax < props.inpMin || props.enterValue}
                 />
                 <Button name={'res'}
-                        disabled={props.inpMax === props.inpMin || props.inpMin < 0 || props.inpMax < 0 || props.inpMax < props.inpMin}
+                        disabled={props.inpMax === props.inpMin || props.inpMin < 0 || props.inpMax < 0 || props.inpMax < props.inpMin || props.enterValue}
                         onClick={props.resetNum}/>
 
             </div>

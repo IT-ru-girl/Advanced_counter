@@ -65,16 +65,16 @@ const SetCount = (props: SetCountType) => {
 
     return (
         <div className={s.counter}>
-            <span>{'min value:'}</span>
+            <span className={s.text}>{'min value:'}</span>
             <input className={finalErrorInput} value={props.inpMin} onChange={onChangeMin}
                    type="number"/>
 
-            <span>{'max value:'}</span>
+            <span className={s.text}>{'max value:'}</span>
             <input className={finalErrorInput2} value={props.inpMax} onChange={onChangeMax} type="number"/>
 
             <div className={b.divButton}>
                 <Button
-                    disabled={props.inpMax === props.inpMin || props.inpMax < 0 || props.inpMin < 0 || props.inpMax < props.inpMin}
+                    disabled={props.inpMax === props.inpMin || props.inpMax < 0 || props.inpMin < 0 || props.inpMax < props.inpMin || !props.enterValue}
                     onClick={onClickHandler} name={'set'}/>
             </div>
 

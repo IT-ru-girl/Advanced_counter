@@ -1,32 +1,29 @@
-/*.count{*/
-/*    width: 400px;*/
-/*    height: 200px;*/
-/*    background-color: red;*/
-/*    margin-left: 400px;*/
-/*    margin-top: 200px;*/
-/*}*/
-.mainBtn{
+
+.mainBtn {
     display: inline;
-   margin: 0 auto 20px auto;
+    margin: 0 auto 20px auto;
     width: 600px;
 }
-.btn1{
+
+.btn1 {
     width: 110px;
     height: 50px;
-border-radius: 15px;
+    border-radius: 15px;
     margin-right: 15px;
     border: none;
 }
 
-.divButton{
-padding-bottom: 10px;
+.divButton {
+    padding-bottom: 10px;
 }
+
 .num {
     height: 60px;
     width: 60px;
     margin: 0 auto 20px auto;
     font-size: 45px;
 }
+
 .stop {
     color: lightblue;
     height: 60px;
