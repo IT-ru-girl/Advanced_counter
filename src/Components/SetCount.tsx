@@ -60,8 +60,8 @@ const SetCount = (props: SetCountType) => {
 
     }
 
-    const finalErrorInput = `${s.counterDisplay} ${props.inpMin <= 0 || props.inpMax === props.inpMin || props.inpMax < props.inpMin ? s.errorInput : s.input}`
-    const finalErrorInput2 = `${s.counterDisplay} ${props.inpMax <= 0 || props.inpMax === props.inpMin || props.inpMax < props.inpMin ? s.errorInput : s.input}`
+    const finalErrorInput = `${s.counterDisplay} ${props.inpMin < 0 || props.inpMax === props.inpMin || props.inpMax < props.inpMin ? s.errorInput : s.input}`
+    const finalErrorInput2 = `${s.counterDisplay} ${props.inpMax < 0 || props.inpMax === props.inpMin || props.inpMax < props.inpMin ? s.errorInput : s.input}`
 
     return (
         <div className={s.counter}>

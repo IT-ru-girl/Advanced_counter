@@ -15,7 +15,7 @@ const App = () => {
 
     const [inpMin, setInpMin] = useState<number>(0)
 
-    const [inpMax, setInpMax] = useState<number>(0)
+    const [inpMax, setInpMax] = useState<number>(5)
 
     const [error, setError] = useState('Enter')
 
